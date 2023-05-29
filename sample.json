@@ -1,0 +1,121 @@
+{
+	"approverOneUser": "archakra",
+	"approverTwoUser": "mreti",
+	"datasetAspect": {
+		"datasetDetailsAspect": {
+			"aspect": {
+				"activeStatuses": [
+					"Active"
+				],
+				"activeUntil": "",
+				"assetClasses": [
+					""
+				],
+				"assetSubClasses": [
+					""
+				],
+				"attachmentDescriptions": [
+					"Data Dictionary"
+				],
+				"attachments": [
+					"https://webster.bfm.com/Wiki/download/attachments/689156008/MSCI_Data_Dictionary.xlsx?version=1&modificationDate=1649211507833&api=v2"
+				],
+				"datasetDiscoverability": "BlackRock and Clients",
+				"entityCountries": [
+					""
+				],
+				"entityCoverages": [
+					"Region"
+				],
+				"entityGranularities": [
+					"entity level"
+				],
+				"entityRegions": [
+					"Global"
+				],
+				"entitySectors": [
+					""
+				],
+				"infoClassifications": [
+					"Limited"
+				],
+				"previewAllowed": "No"
+			},
+			"entityUrn": ""
+		},
+		"generalDescriptionAspect": {
+			"aspect": {
+				"datasetAvailabilities": [
+					"Full Set Data"
+				],
+				"datasetCategoryOne": "EDC_ENTITY_DOMAIN_REFERENCE_DATA",
+				"datasetDescription": "MSCI ESG Accounting Governance Risk product offering is designed to identify extreme values in accounting and non-accounting metrics that may be indicators of opaque and potentially misleading financial reporting. Updated quarterly, AGR scores range in percentile from 1-100, with lower values representing greater risks.",
+				"datasetDisplayName": "MSCI AGR 345899",
+				"datasetName": "MSCI AGR 5690345",
+				"datasetSubCategoryThree": "Governance",
+				"datasetSubCategoryTwo": "Environment, Social & Governance",
+				"datasetType": "Third Party",
+				"datasetStage": "Curated",
+				"datasetSubCategoryFour": "",
+				"preferredServiceLevel": "Gold",
+				"primaryBusinessPurpose": "Sustainable investing, sustainable regulatory reporting, redistribution to Aladdin client community via Aladdin applications and Aladdin Data Cloud part2",
+				"sourceInfo": "Third Party Vendor",
+				"sourceInfoDescription": ""
+			},
+			"entityUrn": ""
+		},
+		"ownerAspect": {
+			"aspect": {
+				"levelFourBusinessOwner": "cread, pravi",
+				"levelFourDataChampion": "asilva",
+				"levelFourDataSteward": "mdellica",
+				"levelOneAladdinClientService": "chowitz, camcmill",
+				"levelOneDataOperation": "dcirigli",
+				"levelOneProductionOperation": "eimartin",
+				"levelThreeEngineering": "pilljay",
+				"levelTwoDataOperation": "dcirigli"
+			},
+			"entityUrn": ""
+		},
+		"serviceInfoAspect": {
+			"aspect": {
+				"dataDistributor": "MSCI",
+				"dataProvider": "MSCI",
+				"licenseRequired": "Yes",
+				"serviceName": "MSCI AGR Test Dataset Hal5672"
+			},
+			"entityUrn": ""
+		},
+		"operationalAspect": {
+			"aspect": {
+				"actualServiceLevel": "Bronze",
+				"deliveryFrequencies": [
+					""
+				],
+				"deliveryMethods": [
+					"FTP/SFTP"
+				],
+				"entityFinalStatus": "",
+				"entityVersion": "",
+				"edcEntityTags": [
+					"veniam quis",
+					"labor"
+				],
+				"estimateSize": "",
+				"fileFormats": [
+					".txt"
+				],
+				"frequencyDeliveries": [
+					"Daily"
+				]
+			},
+			"entityUrn": ""
+		}
+	},
+	"edcEntityName": "test MSCI",
+	"edcEntityType": "dataset",
+	"entityProvider": "MSCI",
+	"entityUserName": "Arpan Chakraborty",
+	"id": "",
+	"userId": "archakra"
+}
