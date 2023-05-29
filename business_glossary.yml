@@ -1,0 +1,112 @@
+version: 1
+source: DataHub
+owners:
+  users:
+    - mjames
+url: "https://github.com/datahub-project/datahub/"
+nodes:
+  - name: Transaction
+    description: Captures trades in Aladdin and the corresponding trade metadata
+    # knowledge_links:
+    #   - label: Wiki link for classification
+    #     url: "https://en.wikipedia.org/wiki/Classification"
+    terms:
+      - name: aladdin_id
+        description: "Aladdin's internal security ID. This may be a real CUSIP or an Aladdin-generated dummy value. Aladdin dummy conventions include: - B Cusips (start with letter B, incremented, no meaning); - S Cusips are sometimes used for securities with SEDOLs: S plus SEDOL plus check-digit). - Futures Cusips use ticker plus maturity year plus check digit, e.g. TYH320039"
+        custom_properties:
+          is_confidential: false
+      - name: asset_status
+        description: "For active securities, this tag will not be present. For inactive securities, this tag will say INACTIVE. How it works: Security Master GUI has an Asset Status field. Usually it stores only values that mean ?inactive?; e.g., DELISTED, FUNGED, and EXCHANGED/CONVERTED. But sometimes it stores values that mean ?active.? The interface uses logic: If the Security Master GUI?s ?Asset Status? field (e.g. DELISTED) is in the decode (ASSET_STATUS) that lists all the inactive statuses, then ASSET_STATUS = INACTIVE. This sets all ?inactive? statuses (e.g. delisted, funged, converted, etc.) to INACTIVE; and it prevents any ?active? statuses from appearing"
+      - name: broker
+        description: "The Aladdin shortname for the executiing broker for this trade."
+        custom_properties:
+          is_confidential: false
+        domain: Marketing
+  - name: Cash_Entry
+    description: "Cash transactions: principal, interest, fees, and other miscellaneous cash. Does not include cash from trade settlements. Does not include capital flows (cash subscriptions and redemptions). Clients may consider using the Ledger Activity file 274 instead of this file, since Ledger Activity file uses cancel/correct methodology and contains cash from trades and from subs/reds."
+    owners:
+      users:
+        - mjames
+    terms:
+      - name: Actual Settlement Date
+        ## An example of using an id to pin a term to a specific guid
+        # id: "urn:li:glossaryTerm:41516e310acbfd9076fffc2c98d2d1a3"
+        description: Date transaction settled at custodian
+        inherits:
+          - Transaction.aladdin_id
+        owners:
+          groups:
+            - Trust and Safety
+      - name: Broker Code
+        description: Aladdin counterparty code
+      - name: Coupon
+        description: Effective coupon (PNI)
+  - name: Approval_List
+    description: Used to track issuers and securities which are on approved lists
+    owners:
+      groups:
+        - finance
+    terms:
+      - name: issuer_id
+        description: Aladdin issuer ID
+        term_source: "EXTERNAL"
+        source_ref: FIBO
+        source_url: "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Account"
+        inherits:
+          - Transaction.aladdin_id
+        contains:
+          - Transaction.aladdin_id
+      - name: list_name
+        description: Name of the list - either a credit enhancer type or a Galileo list
+  - name: Housing
+    description: Provides terms related to the housing domain
+    owners:
+      groups:
+        - interior
+    nodes:
+      - name: Colors
+        description: "Colors that are used in Housing construction"
+        terms:
+          - name: Red
+            description: "red color"
+            term_source: "EXTERNAL"
+            source_ref: FIBO
+            source_url: "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Account"
+
+          - name: Green
+            description: "green color"
+            term_source: "EXTERNAL"
+            source_ref: FIBO
+            source_url: "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Account"
+
+          - name: Pink
+            description: pink color
+            term_source: "EXTERNAL"
+            source_ref: FIBO
+            source_url: "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Account"
+    terms:
+      - name: WindowColor
+        description: Supported window colors
+        term_source: "EXTERNAL"
+        source_ref: FIBO
+        source_url: "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Account"
+        values:
+          - Housing.Colors.Red
+          - Housing.Colors.Pink
+
+      - name: Kitchen
+        description: a room or area where food is prepared and cooked.
+        term_source: "EXTERNAL"
+        source_ref: FIBO
+        source_url: "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Account"
+
+      - name: Spoon
+        description: an implement consisting of a small, shallow oval or round bowl on a long handle, used for eating, stirring, and serving food.
+        term_source: "EXTERNAL"
+        source_ref: FIBO
+        source_url: "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/Account"
+        related_terms:
+          - Housing.Kitchen
+        knowledge_links:
+          - url: "https://en.wikipedia.org/wiki/Spoon"
+            label: Wiki link
