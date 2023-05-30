@@ -1,7 +1,7 @@
 source:
   type: datahub-business-glossary
   config:
-    file: /Users/foongping/datahub-project/datahub/metadata-ingestion/examples/bootstrap_data/business_glossary_fp.yml
+    file: business_glossary_fp.yml
     enable_auto_id: True
     
 sink:
