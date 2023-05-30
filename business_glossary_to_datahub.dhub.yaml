@@ -1,10 +1,11 @@
 source:
   type: datahub-business-glossary
   config:
-    file: ./examples/bootstrap_data/business_glossary.yml
+    file: /Users/foongping/datahub-project/datahub/metadata-ingestion/examples/bootstrap_data/business_glossary_fp.yml
     enable_auto_id: True
-
+    
 sink:
   type: datahub-rest
   config:
-    server: http://localhost:8080
+    server: ${DATAHUB_GMS_URL}
+    token: ${DATAHUB_GMS_TOKEN}
