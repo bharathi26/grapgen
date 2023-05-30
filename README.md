@@ -54,7 +54,7 @@ VFGTE45-RRGEEF54-FTG5W4-GTWE45-G5T5G
 rror: Command failed: /Applications/Lens.app/Contents/Resources/x64/helm install datahub/datahub-prerequisites --version 0.0.14 --values /private/var/folders/kk/09j0x2d944l3nht0jktxzy0w0000gp/T/796129a7940274bd57ca297c4a27645e/values.yaml --namespace default --kubeconfig /var/folders/kk/09j0x2d944l3nht0jktxzy0w0000gp/T/kubeconfig-063bc0fe267ea780a78b047acf798344 --generate-name
 Error: INSTALLATION FAILED: rendered manifests contain a resource that already exists. Unable to continue with install: PodDisruptionBudget "elasticsearch-master-pdb" in namespace "default" exists and cannot be imported into the current release: invalid ownership metadata; annotation validation error: key "meta.helm.sh/release-name" must equal "datahub-prerequisites-1684385128": current value is "prerequisites"
 -----------------------------
-
+```
 
 source:
   type: datahub-business-glossary
@@ -150,3 +150,4 @@ BX Term Group:
    "query":"mutation createGlossaryNode($input: CreateGlossaryEntityInput!) {\n  createGlossaryNode(input: $input)\n}\n"
 }
 ++++++++++++
+```
