@@ -1,9 +1,10 @@
 # grapgen
 
-
+```
 python3 -m pip install --upgrade pip wheel setuptools
 python3 -m pip install --upgrade acryl-datahub
 datahub version
+
 
 
 datahub ingest -c ./examples/recipes/example_to_datahub_rest.dhub.yml --dry-run
@@ -19,7 +20,7 @@ export DATAHUB_GMS_URL=http://localhost:8080
 curl --location --request GET 'localhost:8080/openapi/entities/v1/latest?urns=urn:li:dataset:(urn:li:dataPlatform:hive,SampleHiveDataset,PROD)&aspectNames=schemaMetadata' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhY3RvclR5cGUiOiJVU0VSIiwiYWN0b3JJZCI6ImRhdGFodWIiLCJ0eXBlIjoiUEVSU09OQUwiLCJ2ZXJzaW9uIjoiMiIsImp0aSI6IjYyYjkyOWNhLTZlNmUtNGRlYi1hNGE0LTlhZDBiZGNkYmZjOSIsInN1YiI6ImRhdGFodWIiLCJpc3MiOiJkYXRhaHViLW1ldGFkYXRhLXNlcnZpY2UifQ.6C57j6RPjFd0wo83OC-NCml2-WReSkH80hLyKArmXw4'
-
+```
 
 
 -----
