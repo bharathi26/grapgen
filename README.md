@@ -20,7 +20,7 @@ export DATAHUB_GMS_URL=http://localhost:8080
 curl --location --request GET 'localhost:8080/openapi/entities/v1/latest?urns=urn:li:dataset:(urn:li:dataPlatform:hive,SampleHiveDataset,PROD)&aspectNames=schemaMetadata' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhY3RvclR5cGUiOiJVU0VSIiwiYWN0b3JJZCI6ImRhdGFodWIiLCJ0eXBlIjoiUEVSU09OQUwiLCJ2ZXJzaW9uIjoiMiIsImp0aSI6IjYyYjkyOWNhLTZlNmUtNGRlYi1hNGE0LTlhZDBiZGNkYmZjOSIsInN1YiI6ImRhdGFodWIiLCJpc3MiOiJkYXRhaHViLW1ldGFkYXRhLXNlcnZpY2UifQ.6C57j6RPjFd0wo83OC-NCml2-WReSkH80hLyKArmXw4'
-```
+
 
 
 -----
@@ -47,7 +47,7 @@ docker-compose -p datahub -f docker-compose.dev.yml
 456NITY-BGIDENM-GHY186-JK702JK-J5ES256I
 B5I58GHI-FVRTGT55-GRTRGT-UIOP79-8NJFJR
 VFGTE45-RRGEEF54-FTG5W4-GTWE45-G5T5G
-
+```
 
 
 
