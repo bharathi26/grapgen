@@ -72,7 +72,7 @@ password = "VP3ro4b?"
 upassw = username + ":" + password
 credentials = b64encode(bytes(upassw, 'utf-8')).decode("ascii")
 
-token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIqIiwiYXBwSWQiOiJibGstYWRzLWluc3RhbmNlIiwic2VydmljZUdyb3VwcyI6W10sImRldGFpbHMiOiJbXSIsImlkIjoiNDg5YjNhYjctODg4Ny00NmNlLThkYTEtODFhYzk1OWFhMTg1IiwiZXhwIjoxNzY3MTM5MjAwfQ.yorwl6Sq7_t-4oXk_bjVG7-iGKkyWytNQzNGy28g2ys"
+token = ""
 headers = {
     "Content-Type": "application/json",
     "VND.com.blackrock.Request-ID": "93312931-c361-11ed-9232-3dbbdf11dcb8",
