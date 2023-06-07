@@ -44,9 +44,7 @@ docker-compose -p datahub -f docker-compose.dev.yml
   368  ls
   369  docker-compose -p datahub -f docker-compose-new.yml up
 
-456NITY-BGIDENM-GHY186-JK702JK-J5ES256I
-B5I58GHI-FVRTGT55-GRTRGT-UIOP79-8NJFJR
-VFGTE45-RRGEEF54-FTG5W4-GTWE45-G5T5G
+
 ```
 
 -----------------------------
