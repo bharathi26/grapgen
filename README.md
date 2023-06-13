@@ -5,7 +5,7 @@ python3 -m pip install --upgrade pip wheel setuptools
 python3 -m pip install --upgrade acryl-datahub
 datahub version
 
-
+df[(df['closing_price'] >= 99) & (df['closing_price'] <= 101)]
 
 datahub ingest -c ./examples/recipes/example_to_datahub_rest.dhub.yml --dry-run
 
