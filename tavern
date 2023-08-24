@@ -1,0 +1,61 @@
+---
+test_name: Test Lead finder filter Api
+
+includes:
+  - !include common.yaml
+
+marks:
+  - usefixtures:
+      - get_or_create_token
+
+strict: False
+# ...and each test has one or more stages (e.g. an HTTP request) pytest /tests/integration/  -v
+stages:
+  - name: Make sure authenticated user can access lead finder filters
+
+    # Define the request to be made...
+    request:
+      url: "{host}/v2/leadfinderfilters/"
+      method: GET
+      headers:
+        Authorization: "{get_or_create_token}"
+
+    # ...and the expected response code and body
+    response:
+      status_code: 200
+      json: !anything
+
+  - name: add Filter
+    request:
+      url: "{host}/v2/leadfinderfilters/"
+      method: POST
+      headers:
+        Authorization: "{get_or_create_token}"
+      json: !include lf_filter_data.json
+    response:
+      status_code: 201
+      save:
+        json:
+          created_filter_id: "id"
+    delay_after: 3
+
+  - name: get saved filter
+#    skip: True
+    request:
+      url: "{host}/v2/leadfinderfilters/{created_filter_id}/"
+      method: GET
+      headers:
+        Authorization: "{get_or_create_token}"
+    response:
+      status_code: 200
+      json: !anything
+
+  - name: delete filter
+#    skip: True
+    request:
+      url: "{host}/v2/leadfinderfilters/{created_filter_id}/"
+      method: DELETE
+      headers:
+        Authorization: "{get_or_create_token}"
+    response:
+      status_code: 204
