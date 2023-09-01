@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>external modules</title>
+    <!-- linking to PyScript assets -->
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  </head>
+  <body>
+
+
+    <py-config>
+      packages = ["numpy", "matplotlib", "pandas", "pytest"]
+    </py-config>
+    <py-script>
+
+      import numpy as np
+      import matplotlib.pyplot as plt
+      arr = np.array([1, 2, 3, 4, 5])
+      print(arr)
+
+    </py-script>
+
+  </body>
+</html>
